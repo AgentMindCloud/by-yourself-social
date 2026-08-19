@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>by-yourself-social — The only social network with a population of one</title>
+  <meta name="description" content="Anti-social media. No likes, no followers, no algorithm. Just you and the quiet. Pure local-first." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧘</text></svg>" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">by-yourself-social</span>
+        <span class="tagline">population: 1</span>
+      </div>
+      <div class="top-actions">
+        <button id="btn-stats" class="btn ghost" title="Solitude stats">Stats</button>
+        <button id="btn-about" class="btn ghost">Why</button>
+        <button id="btn-leave" class="btn leave">Leave & Be Present</button>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="timer-bar" id="timer-bar" hidden>
+        <div class="timer-progress" id="timer-progress"></div>
+        <span id="timer-text">Session: 0:00</span>
+      </section>
+
+      <section class="composer-trigger">
+        <button id="btn-whisper" class="btn primary large">Whisper to Yourself</button>
+        <p class="limit-note" id="limit-note"></p>
+      </section>
+
+      <section id="feed" class="feed">
+        <!-- Posts rendered here -->
+      </section>
+
+      <section class="empty-state" id="empty-state">
+        <h2>The Void is empty.</h2>
+        <p>No one else is here.<br>This is ideal.</p>
+      </section>
+    </main>
+
+    <!-- Composer Modal -->
+    <div id="composer-modal" class="modal" hidden>
+      <div class="modal-content">
+        <h2>Whisper to Yourself</h2>
+        <p class="prompt" id="reflection-prompt"></p>
+        <textarea id="post-content" placeholder="No one will see this. Write anyway." rows="6" maxlength="2000"></textarea>
+        <div class="composer-row">
+          <label>
+            Mood
+            <select id="post-mood">
+              <option value="">— none —</option>
+              <option value="calm">calm</option>
+              <option value="reflective">reflective</option>
+              <option value="restless">restless</option>
+              <option value="grateful">grateful</option>
+              <option value="empty">empty</option>
+              <option value="focused">focused</option>
+              <option value="melancholic">melancholic</option>
+              <option value="peaceful">peaceful</option>
+            </select>
+          </label>
+          <label>
+            Time Capsule
+            <select id="post-capsule">
+              <option value="">Reveal now</option>
+              <option value="7">Seal 7 days</option>
+              <option value="30">Seal 30 days</option>
+              <option value="90">Seal 90 days</option>
+              <option value="365">Seal 1 year</option>
+            </select>
+          </label>
+        </div>
+        <p class="helper" id="capsule-helper">This will stay sealed until the date you choose. Future-you might need it.</p>
+        <div class="modal-actions">
+          <button id="btn-cancel" class="btn ghost">Cancel</button>
+          <button id="btn-post" class="btn primary">Seal the Whisper</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div id="stats-modal" class="modal" hidden>
+      <div class="modal-content">
+        <h2>Solitude Stats</h2>
+        <div class="stats-grid" id="stats-grid">
+          <!-- filled by JS -->
+        </div>
+        <div class="modal-actions">
+          <button id="btn-export" class="btn ghost">Export JSON</button>
+          <button id="btn-import" class="btn ghost">Import</button>
+          <button id="btn-clear" class="btn danger">Clear All Data</button>
+          <button id="btn-close-stats" class="btn primary">Close</button>
+        </div>
+        <input type="file" id="import-file" accept=".json" hidden />
+      </div>
+    </div>
+
+    <!-- About / Philosophy Modal -->
+    <div id="about-modal" class="modal" hidden>
+      <div class="modal-content wide">
+        <h2>Why this exists</h2>
+        <p>Social platforms optimized for engagement. We optimized for the opposite.</p>
+        <ul class="philosophy-list">
+          <li>No other users exist here.</li>
+          <li>No public metrics exist here.</li>
+          <li>No algorithm exists here.</li>
+          <li>Your data never leaves this browser.</li>
+          <li>The primary action is leaving.</li>
+        </ul>
+        <p>Use it when you need to hear yourself. Then leave.</p>
+        <hr />
+        <h3>The inversions</h3>
+        <table class="inv-table">
+          <tr><td>Infinite feed of everyone</td><td>→ Finite journal of only yourself</td></tr>
+          <tr><td>Likes & validation</td><td>→ Zero public signals</td></tr>
+          <tr><td>Algorithmic outrage</td><td>→ No algorithm</td></tr>
+          <tr><td>FOMO</td><td>→ JOMO</td></tr>
+          <tr><td>Notifications</td><td>→ Silence</td></tr>
+          <tr><td>Data harvesting</td><td>→ 100% local</td></tr>
+          <tr><td>Addiction loops</td><td>→ Hard limits + forced log-off</td></tr>
+        </table>
+        <div class="modal-actions">
+          <button id="btn-close-about" class="btn primary">Understood</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Force Log Off Overlay -->
+    <div id="logoff-overlay" class="overlay" hidden>
+      <div class="overlay-content">
+        <h1>Time's up.</h1>
+        <p>You've been here long enough.<br>The rest of the world (and your actual life) is still outside.</p>
+        <p class="quote">"The quieter you become, the more you can hear."</p>
+        <button id="btn-force-leave" class="btn leave large">Leave & Be Present</button>
+        <p class="small">Or wait — the timer will keep reminding you.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
