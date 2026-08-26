@@ -3,6 +3,10 @@
 **The only social network with a population of one.**  
 Also the only one whose growth team is unemployed on purpose.
 
+![A person alone using by-yourself-social](docs/hero.svg)
+
+<p align="center"><em>One user. One chair. No audience.</em></p>
+
 Social media was designed to keep you scrolling, comparing, performing, and never quite enough.  
 This one was designed to make you close the tab.
 
@@ -12,6 +16,9 @@ Just you, your thoughts, and a product that is actively trying to get you to lea
 
 If you feel lonely here, that is a feature.  
 If you feel popular here, you are using it wrong.
+
+**Live:** https://agentmindcloud.github.io/by-yourself-social/  
+**Repo:** https://github.com/AgentMindCloud/by-yourself-social
 
 ---
 
@@ -34,66 +41,20 @@ If you feel popular here, you are using it wrong.
 
 ---
 
-### Features (all of them are jokes that also work)
+### Features
 
-- **The Void** — your private timeline. Audience size: 1. Quality of audience: mixed.
-- **Whisper to Yourself** — post with mood + optional time capsule for future-you, who will also not reply.
-- **The Like That Does Nothing** — click it. Watch it fail. Feel free.
-- **Go Viral** — generates a detailed analytics report of zero.
-- **Suggested Friends** — an empty list with confidence.
-- **Self-Replies** — delayed comments from you, to you, about you.
-- **Hard daily limit** — 3 whispers. After that, silence is the product.
-- **Session timer** — 10 minutes, then a full-screen intervention.
-- **Solitude stats** — private numbers that do not go on your résumé.
-- **Export / Import** — take your quiet with you, or lose it like a normal person.
+- **The Void** — your private timeline. Audience size: 1.
+- **Whisper to Yourself** — mood + optional time capsule for future-you.
+- **Hard daily limit** — 3 whispers. Silence is the product.
+- **Session timer** — then a full-screen intervention.
 - **Leave & Be Present** — the only CTA we are proud of.
-
----
-
-### How to use
-
-1. Open the page.
-2. Notice that nobody else is here.
-3. Whisper something you would never put on LinkedIn.
-4. Try to like it. Fail.
-5. Try to go viral. Fail harder.
-6. Leave.
-7. Come back only if you actually want to hear yourself think.
-
-This is not a product to grow. It is a tool to shrink the noise.  
-If this repo ever trends, we will consider it a bug.
-
----
 
 ### Run it
 
-Pure static site. No build step. No accounts. No backend. No tracking.
-
 ```bash
-# just open it
 open index.html
 ```
 
-Or enable GitHub Pages:
+Pages is on: https://agentmindcloud.github.io/by-yourself-social/
 
-1. Repo Settings → Pages
-2. Source: Deploy from a branch
-3. Branch: `main` / folder: `/ (root)`
-4. Save
-
-Live (once Pages is on): https://agentmindcloud.github.io/by-yourself-social/
-
----
-
-### Stack
-
-Vanilla HTML + CSS + JS + localStorage.  
-Zero dependencies, because adding a framework felt like inviting a friend.
-
----
-
-### License
-
-MIT. Do whatever you want. Just do not add other users.
-
-Touch grass.
+MIT. Do not add other users. Touch grass.
